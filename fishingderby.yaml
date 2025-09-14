@@ -46,7 +46,6 @@ objects:
     # legal_region: [29, 78, 131, 189]
 
   obstacle:
-    # 鲨鱼（黑色）
     area_range: [200, 800]   
     colors: [[0, 0, 0]]       
     dilate_size: 3           
