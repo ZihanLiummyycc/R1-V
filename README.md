@@ -43,7 +43,7 @@ python call_detection.py
 
 Step 2: Write a Config File for the Game
 
-See the example config file configs/bowling.yaml
+See the example config file bowling.yaml
  for the Bowling game.
 You may modify it to suit your game.
 
