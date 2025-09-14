@@ -1,0 +1,80 @@
+game_name: "IceHockey"
+
+# # Path configuration
+# input_path: "train_img/assault/output_random_317.png"
+# output_path: "template_imgs/assault/enemy_bullet.png"
+
+# The legal region is a rectangle area where the object detection is applied to.
+# It may exclude for example the dashboard information or other UI elements.
+# Format: [min_x, min_y, max_x, max_y]
+# coordinates are inclusive
+legal_region: [32,30,128,190]
+# legal_region: [32,46,127,183]
+
+# # Paint all background pixels to this color
+# mask_color: [0, 0, 0]
+
+
+# the pixels in the legal region that that have one of the 
+# following colors will be considered as background
+background_colors:
+  - [192,192,192] # grey
+
+
+
+# for each class, it has to match the following criteria:
+
+# colors: the object must contain all of listed colors
+# area_range: the area of the object must be in this range
+# width_range: the width of the object must be in this range
+# height_range: the height of the object must be in this range
+# legal_region: the object must lie in this region
+
+objects:
+  yellow_team:
+    colors: [[99, 204, 232], [45, 126, 82], [86, 182, 210]]
+    dilate_size: 1
+    morphology_kernel: 12
+    bbox_offset_x: -2
+    bbox_offset_y: -1
+    vertical_dilate_size: 6
+    # yellow, green
+    # area_range: [200,400] # min, max
+    # width_range: [16, 32] # min, max
+    # height_range: [16, 32] # min, max
+    # legal_region: [0, 159, 0, 171] # min_x, min_y, max_x, max_y
+  blue_team:
+    colors: [[50, 50, 184], [184, 50, 45]] 
+    dilate_size: 1
+    morphology_kernel: 12
+    bbox_offset_x: -2
+    bbox_offset_y: -2
+    vertical_dilate_size: 6
+    # blue, red
+    # area_range: [200,400] # min, max
+    # width_range: [16, 32] # min, max
+    # height_range: [16, 32] # min, max
+    # legal_region: [0, 159, 0, 171] # min_x, min_y, max_x, max_y
+  ball:
+    colors: [[0, 0, 0]] #  black
+    area_range: [0,8] 
+    morphology_kernel: 1
+    # min, max
+    # width_range: [16, 32] # min, max
+    # height_range: [16, 32] # min, max
+    # legal_region: [32,46,127,183] 
+    # min_x, min_y, max_x, max_y
+    bbox_offset_x: -2
+    bbox_offset_y: -2
+    #vertical_dilate_size: 3
+
+fixed_ui_elements:
+  blue_team_score:
+    bbox: [45, 13, 59, 20]
+    type: "score"
+  yellow_team_score:
+    bbox: [108, 13, 124, 21]
+    type: "score"
+  time:
+    bbox: [64, 4, 96, 12]
+    type: "time"

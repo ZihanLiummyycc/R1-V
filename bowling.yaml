@@ -1,0 +1,58 @@
+game_name: "Bowling"
+
+# The legal region is a rectangle area where the object detection is applied to.
+# It may exclude for example the dashboard information or other UI elements.
+# Format: [min_x, min_y, max_x, max_y]
+# coordinates are inclusive
+legal_region: [0, 104, 159, 171]
+
+# the pixels in the legal region that that have one of the 
+# following colors will be considered as background
+background_colors:
+  - [48, 122, 180] # brown
+
+# for each class, it has to match the following criteria:
+
+# colors: the object must contain all of listed colors
+# area_range: the area of the object must be in this range
+# width_range: the width of the object must be in this range
+# height_range: the height of the object must be in this range
+# legal_region: the object must lie in this region
+
+fixed_ui_elements:
+  score:
+    bbox: [38, 5, 125, 18]  # 分数显示区域 (略微扩大)
+  
+  time:
+    bbox: [29, 16, 61, 35]  # 时间显示区域 (略微扩大)
+
+
+
+objects:
+  player:
+    colors: [[179, 89, 198], [214, 92, 84], [200, 72, 66], [0, 0, 0]] # 玩家从头到脚的四种颜色
+    area_range: [200, 400] # min, max
+    dilate_size: 2
+    morphology_kernel: 5
+    vertical_dilate_size: 3
+    connect_horizontal: true
+    connect_vertical: true
+    bbox_offset_x: -2  # 精确的白色值
+    bbox_offset_y: -2
+    
+  ball:
+    colors: [[184, 50, 45]] # 球的颜色
+    area_range: [40, 60] # min, max
+    dilate_size: 3
+    morphology_kernel: 5
+    vertical_dilate_size: 3
+    bbox_offset_x: -1  # 精确的白色值
+    bbox_offset_y: -1
+    
+  target:
+    colors: [[184, 50, 45]] # 目标的颜色（与球相同）
+    area_range: [5, 15] # 扩大范围，原来8,8太严格
+    dilate_size: 2
+    morphology_kernel: 3
+    bbox_offset_x: -2  # 精确的白色值
+    bbox_offset_y: -2

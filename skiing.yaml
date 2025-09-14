@@ -1,0 +1,40 @@
+game_name: "Skiing"
+
+# 游戏区域配置 - 只包含动态游戏内容
+legal_region: [8, 25, 150, 208]  # 排除固定的时间和分数区域
+
+# Skiing游戏背景色
+background_colors:
+  - [236, 236, 236]  # 白色雪地背景
+
+# 动态游戏对象配置
+objects:
+  player:
+    # 蓝色滑雪者
+    area_range: [20, 200]
+    colors: [[92, 92, 214]]  # 蓝色滑雪者
+    dilate_size: 1
+    morphology_kernel: 12
+    bbox_offset_x: -1
+    bbox_offset_y: -1
+    vertical_dilate_size: 3
+    
+  obstacle:
+    # 所有障碍物 (树木、岩石等)
+    area_range: [30, 800]
+    colors: [[72, 160, 72], [45, 126, 82], [200, 72, 66], [101, 208, 158], [66, 156, 110]]
+    dilate_size: 1
+    morphology_kernel: 12
+    bbox_offset_x: -1
+    bbox_offset_y: -1
+    vertical_dilate_size: 3
+
+# 固定UI元素坐标定义 (直接用坐标，不参与连通组件检测)
+fixed_ui_elements:
+  time:
+    # 时间显示的固定位置
+    bbox: [67, 4, 79, 13]  # 固定边界框
+    
+  score:
+    # 分数显示的固定位置  
+    bbox: [58, 15, 96, 23]  # 固定边界框
