@@ -6,24 +6,6 @@ A lightweight pipeline for **data generation → supervised fine-tuning (SFT) �
 The repository organizes the workflow into three stages driven by dedicated scripts.
 
 
-
-## Table of Contents
-- [Overview](#overview)
-- [Scripts](#scripts)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-  - [A) Data Generation](#a-data-generation)
-  - [B) Supervised-Fine Tuning (SFT)](#b-supervised-fine-tuning-sft)
-  - [C) Evaluation](#c-evaluation)
-- [Configuration](#configuration)
-- [Outputs & Logging](#outputs--logging)
-- [Reproducibility](#reproducibility)
-- [Troubleshooting](#troubleshooting)
-- [Acknowledgements](#acknowledgements)
-
----
-
 ## Overview
 
 This project contains three components:
@@ -36,17 +18,4 @@ Use the data generation scripts to prepare training data, run SFT to train a mod
 
 ---
 
-## Repository Structure
 
-```text
-.
-├── data/                     # Datasets & intermediate artifacts (consider .gitignore large files)
-│   ├── raw/                  # Raw/unprocessed inputs
-│   ├── processed/            # Cleaned/derived artifacts
-│   └── splits/               # Train/val/test splits (optional)
-├── outputs/
-│   ├── sft/                  # Saved checkpoints, logs
-│   └── eval/                 # Evaluation reports, metrics
-├── requirements.txt
-├── README.md
-└── *.py                      # Project scripts (see below)
