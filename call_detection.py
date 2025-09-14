@@ -73,10 +73,10 @@ for env_id in range(len(env_list)):
     #             game_config_yaml="object_detection/opencv_template_matching/game_configs/" + short_name.lower() + ".yaml"
     #         )
 
-    total_steps = 10000 # 需要执行的总步数
+    total_steps = 10000 
     sample_rate = 200
-    0  # 每隔多少步采样一次
-    prediction_mode = False  # 是否使用预测模式。如果为True，保存labelled images；如果为False，则只保存原始image。
+    0  
+    prediction_mode = False  
 
     # for index in range(total_steps):
     for index in tqdm.tqdm(range(total_steps), desc=f"Processing {short_name}"):
