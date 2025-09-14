@@ -89,7 +89,7 @@ for env_id in range(len(env_list)):
 
         obs, reward, done, info = env.step([action])
         if index % sample_rate == 0:
-            print(f"\n执行动作: {action}/{action_space[action]}, 奖励: {reward}, 是否完成: {done}")
+            print(f"\ntakeaction: {action}/{action_space[action]}, 奖励: {reward}, 是否完成: {done}")
 
             img = env.render(mode='rgb_array')
 
