@@ -4,15 +4,15 @@ set -Eeuo pipefail
 cd /root/R1-V
 export PYTHONPATH=./
 
-# 激活 conda 环境
+
 source /root/anaconda3/etc/profile.d/conda.sh
 conda activate zihan-env
 
-# 环境变量
+
 export NCCL_IB_DISABLE=1
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
-# 启动训练
+
 accelerate launch \
   --num_processes=1 \
   --num_machines=1 \
