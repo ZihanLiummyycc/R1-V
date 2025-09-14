@@ -141,17 +141,13 @@ def detect_objects(objects_config, img_path: str, bg_colors: List[Tuple[int, int
         ellipse_kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (kernel_size, kernel_size))
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, ellipse_kernel)
         
-        # 先获取基础dilate_size
         dilate_size = params.get('dilate_size', 2)
-        
-        # 检查是否需要垂直膨胀控制
+
         vertical_dilate = params.get('vertical_dilate_size', dilate_size)
         if vertical_dilate != dilate_size:
-            # 创建垂直膨胀核
             v_dilate_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, vertical_dilate * 2))
             mask = cv2.dilate(mask, v_dilate_kernel, iterations=1)
-        
-        # 正常的膨胀和腐蚀
+
         dilate_kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (dilate_size, dilate_size))
         mask = cv2.dilate(mask, dilate_kernel, iterations=1)
         mask = cv2.erode(mask, dilate_kernel, iterations=1)
@@ -168,7 +164,6 @@ def detect_objects(objects_config, img_path: str, bg_colors: List[Tuple[int, int
                 crop = img[y:y+h, x:x+w]
                 result = verify(obj_class, params, crop, x, y, w, h)
                 
-                # 添加偏移调整
                 x_offset = params.get('bbox_offset_x', 0)
                 y_offset = params.get('bbox_offset_y', 0)
 
