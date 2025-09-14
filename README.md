@@ -96,27 +96,4 @@ After training, evaluate the fine-tuned model with:
 
 python atari_play_lrc.py
 
-📂 Repository Structure
-.
-├── configs/                     
-│   └── bowling.yaml              # Example config file
-├── images/                      
-│   └── Bowling/                  # Example collected images
-├── call_detection.py             # Step 1: Collect test images
-├── get_coord.py                  # Step 2: Get pixel coordinate & color
-├── cc_classifier.py              # Step 3: Run classifier
-├── sft_normal.py                 # Core SFT training script
-├── small_sft.sh                  # SFT (small config)
-├── middle_sft.sh                 # SFT (medium config)
-├── full_sft.sh                   # SFT (full config)
-├── withthink_sft.sh              # SFT (with think)
-├── nothink_sft.sh                # SFT (no think)
-├── sft_sports_5000_training_state.json
-├── sft_sports_small_training_state.json
-├── sft_sports_full_training_state.json
-├── sft_sports_withthink_training_state.json
-├── sft_sports_nothink_training_state.json
-├── atari_play_lrc.py             # Evaluation script
-├── requirements.txt              # Dependencies
-├── setup.sh                      # Environment setup script
-└── README.md
+
