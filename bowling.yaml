@@ -21,38 +21,38 @@ background_colors:
 
 fixed_ui_elements:
   score:
-    bbox: [38, 5, 125, 18]  # 分数显示区域 (略微扩大)
+    bbox: [38, 5, 125, 18]  
   
   time:
-    bbox: [29, 16, 61, 35]  # 时间显示区域 (略微扩大)
+    bbox: [29, 16, 61, 35]  
 
 
 
 objects:
   player:
-    colors: [[179, 89, 198], [214, 92, 84], [200, 72, 66], [0, 0, 0]] # 玩家从头到脚的四种颜色
+    colors: [[179, 89, 198], [214, 92, 84], [200, 72, 66], [0, 0, 0]] 
     area_range: [200, 400] # min, max
     dilate_size: 2
     morphology_kernel: 5
     vertical_dilate_size: 3
     connect_horizontal: true
     connect_vertical: true
-    bbox_offset_x: -2  # 精确的白色值
+    bbox_offset_x: -2  
     bbox_offset_y: -2
     
   ball:
-    colors: [[184, 50, 45]] # 球的颜色
+    colors: [[184, 50, 45]]
     area_range: [40, 60] # min, max
     dilate_size: 3
     morphology_kernel: 5
     vertical_dilate_size: 3
-    bbox_offset_x: -1  # 精确的白色值
+    bbox_offset_x: -1  
     bbox_offset_y: -1
     
   target:
-    colors: [[184, 50, 45]] # 目标的颜色（与球相同）
-    area_range: [5, 15] # 扩大范围，原来8,8太严格
+    colors: [[184, 50, 45]] 
+    area_range: [5, 15] 
     dilate_size: 2
     morphology_kernel: 3
-    bbox_offset_x: -2  # 精确的白色值
+    bbox_offset_x: -2  
     bbox_offset_y: -2
