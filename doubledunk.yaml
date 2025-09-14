@@ -1,70 +1,63 @@
 game_name: "DoubleDunk"
 
-# 游戏区域配置
-legal_region: [9, 52, 147, 177]  # 根据实际游戏区域调整
-
-# DoubleDunk游戏背景色
+legal_region: [9, 52, 147, 177]  
 background_colors:
-  - [0, 0, 0]      # 黑色背景
-  - [111, 111, 111] # 灰色球场地面
+  - [0, 0, 0]     
+  - [111, 111, 111] 
 
-# 固定UI元素 (分数显示区域)
 fixed_ui_elements:
   player_green_score:
-    bbox: [44, 8, 60, 15]  # 左上角分数 "4"
+    bbox: [44, 8, 60, 15]  
     type: "score"
   player_white_score:
-    bbox: [108, 8, 125, 15]  # 右上角分数 "4"
+    bbox: [108, 8, 125, 15]  
     type: "score"
   timer:
-    bbox: [34, 16, 60, 25]  # 中间计时器 "24FTS"
+    bbox: [34, 16, 60, 25]  
     type: "timer"
   def_label:
-    bbox: [35, 181, 49, 188]  # 左下角 "DEF"
+    bbox: [35, 181, 49, 188]  
     type: "ui_label"
   off_label:
-    bbox: [100, 182, 115, 188]  # 右下角 "OFF"  
+    bbox: [100, 182, 115, 188]   
     type: "ui_label"
   basketball_hoop:
-    bbox: [67, 26, 93, 52]  # 篮球框
+    bbox: [67, 26, 93, 52]  
     type: "ui_label"
 
-# 对象检测配置
 objects:
-  # 球员1 (绿色球衣) - 保留原有效果，最小调整
   player_green:
     colors:
       - [105, 129, 45]   
       - [79, 171, 160]   
       - [236, 236, 236]
-    #area_range: [100, 300]   # 恢复原来的注释状态
+    #area_range: [100, 300]   
     width_range: [5, 15]
-    #height_range: [15, 40]   # 恢复原来的注释状态
+    #height_range: [15, 40]   
     dilate_size: 1
-    morphology_kernel: 8      # 从12降到8，减少连接但保持检测效果
+    morphology_kernel: 8      
     bbox_offset_x: -2
     bbox_offset_y: -2
-    vertical_dilate_size: 4   # 从6降到4，减少垂直连接
-    connect_horizontal: false # 只添加这个来防止水平重叠
+    vertical_dilate_size: 4   
+    connect_horizontal: false 
     
-  # 球员2 (白色球衣) - 保留原有效果，最小调整
   player_white:
     colors:
       - [22, 89, 80]   
       - [99, 204, 232]   
       - [236, 236, 236]
       - [40, 83, 181]
-    #area_range: [100, 300]   # 恢复原来的注释状态
+    #area_range: [100, 300]   
     width_range: [5, 15]
-    #height_range: [15, 40]   # 恢复原来的注释状态
+    #height_range: [15, 40]   
     dilate_size: 1
-    morphology_kernel: 8      # 从12降到8，减少连接但保持检测效果
+    morphology_kernel: 8     
     bbox_offset_x: -2
     bbox_offset_y: -2
-    vertical_dilate_size: 4   # 从6降到4，减少垂直连接
-    connect_horizontal: false # 只添加这个来防止水平重叠
+    vertical_dilate_size: 4  
+    connect_horizontal: false 
     
-  # 篮球
+  
   basketball:
     colors:
       - [17, 72, 144]   
