@@ -1,65 +1,58 @@
 game_name: "FishingDerby"
 
-# 游戏区域配置
 legal_region: [9, 20, 152, 188]
 
-# 钓鱼游戏背景色
 background_colors:
-  - [167, 26, 24]   # 深蓝色背景
-  - [184, 50, 45]   # 中等蓝色背景  
-  - [200, 72, 66]   # 浅蓝色背景
+  - [167, 26, 24]   
+  - [184, 50, 45]  
+  - [200, 72, 66]   
 
-# 固定UI元素配置
 fixed_ui_elements:
   score:
-    bbox: [48, 5, 119, 20]  # 左上角(53,10)到右下角(114,15)
+    bbox: [48, 5, 119, 20]  
 
 
-# 游戏对象配置
 objects:
   player_red:
-    # 红色玩家
-    # area_range: [100, 300]    # 扩大面积范围
-    colors: [[26, 26, 167]]   # 红色玩家颜色
-    dilate_size: 1           # 增加膨胀让框更大
+    # area_range: [100, 300]    
+    colors: [[26, 26, 167]]   
+    dilate_size: 1          
     morphology_kernel: 7
     vertical_dilate_size: 8
-    bbox_offset_x: -1         # 向左偏移修正偏右问题
-    bbox_offset_y: -7         # 向上偏移修正偏下问题
+    bbox_offset_x: -1         
+    bbox_offset_y: -7        
 
   player_green:
-    # 绿色玩家
-    # area_range: [100, 300]    # 扩大面积范围
+    # area_range: [100, 300]   
     width_range: [10, 18]
     # height_range: [10, 20]
     colors: [[72, 160, 72]]
-    dilate_size: 1           # 增加膨胀让框更大
+    dilate_size: 1          
     morphology_kernel: 7
     vertical_dilate_size: 9
-    bbox_offset_x: -1         # 向左偏移修正偏右问题
-    bbox_offset_y: -7         # 向上偏移修正偏下问题
+    bbox_offset_x: -1         
+    bbox_offset_y: -7        
 
   fish:
-    # 目标鱼
-    area_range: [1, 150]      # 扩大面积范围
-    colors: [[74, 232, 232], [0, 255, 255]] # 黄绿色鱼
-    dilate_size: 8            # 大幅增加膨胀让框更大
+    area_range: [1, 150]      
+    colors: [[74, 232, 232], [0, 255, 255]] 
+    dilate_size: 8            
     morphology_kernel: 12
     vertical_dilate_size: 3
-    connect_horizontal: true  # 确保水平连接
-    connect_vertical: true    # 确保垂直连接
-    bbox_offset_x: -3         # 向左偏移修正偏右问题
-    bbox_offset_y: -1         # 向上偏移修正偏下问题
+    connect_horizontal: true  
+    connect_vertical: true    
+    bbox_offset_x: -3         
+    bbox_offset_y: -1         
     # legal_region: [29, 78, 131, 189]
 
   obstacle:
     # 鲨鱼（黑色）
-    area_range: [200, 800]    # 大幅扩大面积范围（从250-500改为200-800）
-    colors: [[0, 0, 0]]       # 黑色鲨鱼
-    dilate_size: 3            # 增加膨胀让框更大
+    area_range: [200, 800]   
+    colors: [[0, 0, 0]]       
+    dilate_size: 3           
     morphology_kernel: 10
-    bbox_offset_x: -3         # 向左偏移修正偏右问题
-    bbox_offset_y: -3         # 向上偏移修正偏下问题
+    bbox_offset_x: -3         
+    bbox_offset_y: -3         
     # legal_region: [29, 78, 131, 189]
 
   
