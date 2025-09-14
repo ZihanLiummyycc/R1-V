@@ -1,0 +1,35 @@
+{
+    "qwen_base": [
+      { "game": "Bowling", "model": "qwen_base", "total_reward": 0.0, "steps": 1000 },
+      { "game": "Boxing", "model": "qwen_base", "total_reward": -19.0, "steps": 1000 },
+      { "game": "DoubleDunk", "model": "qwen_base", "total_reward": -2.0, "steps": 1000 },
+      { "game": "IceHockey", "model": "qwen_base", "total_reward": -2.0, "steps": 1000 },
+      { "game": "Skiing", "model": "qwen_base", "total_reward": -6663.0, "steps": 1000 },
+      { "game": "FishingDerby", "model": "qwen_base", "total_reward": -54.0, "steps": 1000 }
+    ],
+    "qwen_sft_full": [
+      { "game": "Bowling", "model": "qwen_sft_full", "total_reward": 19.0, "steps": 1000 },
+      { "game": "Boxing", "model": "qwen_sft_full", "total_reward": -7.0, "steps": 1000 },
+      { "game": "DoubleDunk", "model": "qwen_sft_full", "total_reward": 0.0, "steps": 1000 },
+      { "game": "IceHockey", "model": "qwen_sft_full", "total_reward": -2.0, "steps": 1000 },
+      { "game": "Skiing", "model": "qwen_sft_full", "total_reward": -16140.0, "steps": 1000 },
+      { "game": "FishingDerby", "model": "qwen_sft_full", "total_reward": -38.0, "steps": 1000 }
+    ],
+    "qwen_sft_small": [
+      { "game": "Bowling", "model": "qwen_sft_small", "total_reward": 14.0, "steps": 1000 },
+      { "game": "Boxing", "model": "qwen_sft_small", "total_reward": -1.0, "steps": 1000 },
+      { "game": "DoubleDunk", "model": "qwen_sft_small", "total_reward": -1.0, "steps": 1000 },
+      { "game": "IceHockey", "model": "qwen_sft_small", "total_reward": 0.0, "steps": 1000 },
+      { "game": "Skiing", "model": "qwen_sft_small", "total_reward": -10970.0, "steps": 1000 },
+      { "game": "FishingDerby", "model": "qwen_sft_small", "total_reward": -50.0, "steps": 1000 }
+    ],
+    "qwen_sft_middle": [
+      { "game": "Bowling", "model": "qwen_sft_middle", "total_reward": 12.0, "steps": 1000 },
+      { "game": "Boxing", "model": "qwen_sft_middle", "total_reward": -14.0, "steps": 1000 },
+      { "game": "DoubleDunk", "model": "qwen_sft_middle", "total_reward": 0.0, "steps": 1000 },
+      { "game": "IceHockey", "model": "qwen_sft_middle", "total_reward": -1.0, "steps": 1000 },
+      { "game": "Skiing", "model": "qwen_sft_middle", "total_reward": -13310.0, "steps": 1000 },
+      { "game": "FishingDerby", "model": "qwen_sft_middle", "total_reward": -91.0, "steps": 1000 }
+    ]
+  }
+  
